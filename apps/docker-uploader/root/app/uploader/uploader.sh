@@ -119,7 +119,6 @@ while true;do
 
    awk 'BEGIN { FS = ": " } /ERROR/ {print $2}' "${CHK}" > "${DIFF}"
    awk 'BEGIN { FS = ": " } /NOTICE/ {print $2}' "${CHK}" >> "${DIFF}"
-   testcfg
 
    num_files=`cat ${DIFF} | wc -l`
    log "Number of files to be moved $num_files"
